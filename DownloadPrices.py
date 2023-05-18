@@ -13,9 +13,6 @@ end_date= today.strftime("%Y-%m-%d")
 
 
 def getData(ticker):
-    # ticker = "DURDO.IS"
-    # yf_hisse = yf.Ticker(ticker)
-    # data = yf_hisse.history(interval="1d", start=start_date, end=end_date, auto_adjust=False)
     data = yf.download(ticker, start=start_date, end=end_date)
     dataname= ticker.split(".")
     data.to_csv("./data/yahoo/"+dataname[0]+".IS.csv")
