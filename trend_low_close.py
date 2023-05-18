@@ -132,14 +132,14 @@ def plot(stock, rating):
 
 df_output = pd.DataFrame(columns=['Stock', "trend_low_min", "trend_low_max", "trend_low_count", 'trend_low_angle', 'fark_trendlow', 'trend_low_positive'])
 
-path = './data/yahoo_price/'
+path = './data/yahoo/'
 files = [f for f in glob.glob(path + "**/*.csv", recursive=True)]
 
 
 counter = 0
 for f in files:
     counter = counter + 1
-    StockName = f.replace("./data/yahoo_price\\", "")
+    StockName = f.replace("./data/yahoo\\", "")
     StockName = StockName.replace('.csv', "")
 
     print(counter, "/", len(files), " -- ", StockName)
